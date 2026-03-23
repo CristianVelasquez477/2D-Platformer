@@ -9,16 +9,12 @@ height = 80.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
-move_speed = null
-accelaration = null
-braking = null
-gravity = null
-jump_force = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(3.5416667, 3.25)
 texture = ExtResource("1_4flbx")
 offset = Vector2(0, -12)
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -40)
