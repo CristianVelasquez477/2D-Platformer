@@ -16,4 +16,4 @@ tile_map_data = PackedByteArray("AAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAA
 tile_set = ExtResource("2_hn12h")
 
 [node name="Player" parent="BackgroundSprite" instance=ExtResource("3_hn12h")]
-position = Vector2(-389, -128)
+position = Vector2(-403, -181)
