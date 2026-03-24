@@ -9,7 +9,7 @@ extends CharacterBody2D
 var move_input : float
 
 @onready var sprite : Sprite2D = $Sprite
-
+@onready var anim : AnimationPlayer = $AnimationPlayer
 func _physics_process(delta):
 	# gravity
 	if not is_on_floor():
@@ -31,4 +31,19 @@ func _physics_process(delta):
 
 
 func _proccess(delta):
-	sprite.flip_h = velocity.x > 0
+	if velocity.x != 0:
+		sprite.flip_h = velocity.x > 0
+	
+	
+	func _manage_animation ():
+	if not is_on_floor():
+	anim.play("idle")
+	elif move_input ! = 0:
+		anim.play("move")
+else:
+		anim.play("idle")
+	
+	
+	
+	
+	
