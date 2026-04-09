@@ -15,6 +15,10 @@ run/main_scene="uid://dpcmbrk7yimsi"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+playerstats="*res://playerstats.gd"
+
 [input]
 
 move_left={
