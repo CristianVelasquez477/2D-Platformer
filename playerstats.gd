@@ -1,4 +1,4 @@
-extends "res://Scripts/coin.gd"
+extends Node
 
 
 var score : int = 0
