@@ -18,6 +18,7 @@ func _ready ():
 	_update_score(playerstats.score)
 	
 func _update_hearts (health : int):
+	print(health)
 	for i in len(hearts):
 		hearts[i].visible = i < health
 	

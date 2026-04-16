@@ -39,6 +39,8 @@ func _physics_process(delta):
 func _process(delta):
 	sprite.flip_h = velocity.x > 0
 
+	if global_position.y > 200: 
+		game_over()
 	_manage_animation()
 
 func _manage_animation ():
@@ -53,7 +55,7 @@ func _manage_animation ():
 func take_damage (amount : int):
 	health -= amount
 	OnUpdateHealth.emit(health)
-	
+	_damage_flash()
 	
 	
 	if health<= 0:
@@ -68,6 +70,7 @@ func increase_score (amount : int):
 	OnUpdateScore.emit(playerstats.score)
 	
 	
-	
-	
-	
+func _damage_flash():
+	sprite.modulate = Color.RED
+	await  get_tree().create_timer(0.05).timeout
+	sprite.modulate = Color.WHITE
