@@ -16,6 +16,9 @@ var move_input : float
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim  : AnimationPlayer = $AnimationPlayer
+@onready var  audio : AudioStreamPlayer = $AudioStreamPlayer
+
+var take_damage_sfx = preload("")
 
 func _physics_process(delta):
 	# gravity

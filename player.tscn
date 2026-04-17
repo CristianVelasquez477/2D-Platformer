@@ -90,6 +90,12 @@ shadow_size = 6
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_onrkg")
+move_speed = null
+accelaration = null
+braking = null
+gravity = null
+jump_force = null
+health = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(1.089, 1)
