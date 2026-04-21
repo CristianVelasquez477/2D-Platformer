@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=4 uid="uid://dxuf1c4607yvs"]
+
+[ext_resource type="Script" uid="uid://b8qko3r2kqddy" path="res://Scripts/background_parallax.gd" id="1_7j8ne"]
+[ext_resource type="Texture2D" uid="uid://bbo1fnhix0uxc" path="res://Backgrounds/backgroundDesert.png" id="2_7j8ne"]
+[ext_resource type="PackedScene" uid="uid://bj2wjre1h6or3" path="res://Scenes/coin.tscn" id="3_ehv2h"]
+[ext_resource type="PackedScene" uid="uid://u2b4k6a5qm08" path="res://Scenes/enemy.tscn" id="4_15wb7"]
+[ext_resource type="PackedScene" uid="uid://v4y3k3nglc6a" path="res://Scenes/end_flag.tscn" id="5_eoq84"]
+[ext_resource type="TileSet" uid="uid://kthy1k6fgj21" path="res://Tiles/new_tile_set.tres" id="6_yl73a"]
+[ext_resource type="PackedScene" uid="uid://dpcmbrk7yimsi" path="res://player.tscn" id="7_xbcdb"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(359, 65)
+script = ExtResource("1_7j8ne")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 0.77254903, 1)
+texture = ExtResource("2_7j8ne")
+
+[node name="BackgroundSprite3" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 0.7764706, 1)
+position = Vector2(1024, 0)
+texture = ExtResource("2_7j8ne")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 0.78431374, 1)
+position = Vector2(-1028, 0)
+texture = ExtResource("2_7j8ne")
+
+[node name="BackgroundSprite4" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 0.78039217, 1)
+position = Vector2(2048, -2)
+texture = ExtResource("2_7j8ne")
+
+[node name="BackgroundSprite5" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 0.8, 1)
+position = Vector2(-2055, -1)
+texture = ExtResource("2_7j8ne")
+
+[node name="coins" type="Node" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("3_ehv2h")]
+position = Vector2(52, -55)
+
+[node name="coin2" parent="coins" instance=ExtResource("3_ehv2h")]
+position = Vector2(449, 39)
+
+[node name="coin3" parent="coins" instance=ExtResource("3_ehv2h")]
+position = Vector2(264, 39)
+
+[node name="coin4" parent="coins" instance=ExtResource("3_ehv2h")]
+position = Vector2(646, 2)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("4_15wb7")]
+position = Vector2(-9, -54)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("4_15wb7")]
+position = Vector2(157, -56)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("4_15wb7")]
+position = Vector2(411, 3)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("4_15wb7")]
+position = Vector2(887, -38)
+move_direction = Vector2(0, 0)
+move_speed = 30.0
+
+[node name="EndFlag" parent="." instance=ExtResource("5_eoq84")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(19, -45)
+tile_map_data = PackedByteArray("AAD9////AAAAAAIAAAD8////AAAAAAIAAAD+////AAAAAAIAAAD/////AAAAAAIAAAD//wAAAAAFAAAAAAD+/wAAAAAFAAAAAAD9/wAAAAAFAAAAAAD8/wAAAAAFAAAAAAD8/wEAAAAFAAAAAAD9/wEAAAAFAAAAAAD+/wEAAAAFAAAAAAD//wEAAAAFAAAAAAAFAAAAAAADAAMAAAAGAAAAAAADAAMAAAAHAAEAAAAFAAAAAAAIAAEAAAAFAAAAAAAJAAEAAAAFAAAAAAAGAAEAAAAFAAAAAAAFAAEAAAAFAAAAAAAFAAIAAAAFAAAAAAAGAAIAAAAFAAAAAAAHAAIAAAAFAAAAAAAEAAIAAAADAAIAAAAFAAMAAAAFAAAAAAAGAAMAAAAFAAAAAAAHAAMAAAAFAAAAAAAHAAQAAAAFAAAAAAAGAAQAAAAFAAAAAAAJAAIAAAAFAAAAAAAIAAIAAAAFAAAAAAAIAAMAAAAFAAAAAAAJAAMAAAAFAAAAAAAJAAQAAAAFAAAAAAAIAAQAAAAFAAAAAAAJAAUAAAAFAAAAAAAIAAUAAAAFAAAAAAAHAAUAAAAFAAAAAAAGAAUAAAAFAAAAAAAFAAUAAAAFAAAAAAAFAAYAAAAFAAAAAAAGAAYAAAAFAAAAAAAHAAYAAAAFAAAAAAAIAAYAAAAFAAAAAAAJAAYAAAAFAAAAAAAJAAcAAAAFAAAAAAAIAAcAAAAFAAAAAAAHAAcAAAAFAAAAAAAGAAcAAAAFAAAAAAAFAAcAAAAFAAAAAAAFAAgAAAAFAAAAAAAGAAgAAAAFAAAAAAAHAAgAAAAFAAAAAAAIAAgAAAAFAAAAAAAIAAkAAAAFAAAAAAAJAAgAAAAFAAAAAAAJAAkAAAAFAAAAAAAHAAkAAAAFAAAAAAAGAAkAAAAFAAAAAAAFAAkAAAAFAAAAAAAOAAEAAAADAAIAAAAOAAIAAAAFAAAAAAAOAAMAAAAFAAAAAAAOAAQAAAAFAAAAAAAOAAUAAAAFAAAAAAAOAAYAAAAFAAAAAAAOAAcAAAAFAAAAAAARAAIAAAADAAIAAAARAAMAAAAFAAAAAAARAAQAAAAFAAAAAAARAAUAAAAFAAAAAAARAAYAAAAFAAAAAAARAAcAAAAFAAAAAAAVAAIAAAADAAIAAAAVAAMAAAAFAAAAAAAYAAIAAAADAAIAAAAYAAMAAAAFAAAAAAAYAAQAAAAFAAAAAAAcAAIAAAADAAIAAAAdAAIAAAADAAIAAAAeAAIAAAADAAIAAAAfAAIAAAADAAIAAAAgAAIAAAADAAIAAAAgAAMAAAAFAAEAAAAfAAMAAAAFAAEAAAAeAAMAAAAFAAEAAAAdAAMAAAAFAAEAAAAcAAMAAAAFAAEAAAAcAAQAAAAFAAEAAAAdAAQAAAAFAAEAAAAeAAQAAAAFAAEAAAAfAAQAAAAFAAEAAAAgAAQAAAAFAAEAAAAhAAQAAAAFAAEAAAAhAAMAAAAFAAEAAAAhAAIAAAADAAMAAAAlAAIAAAACAAMAAAAmAAEAAAACAAMAAAAnAAIAAAACAAMAAAAsAP7/AAACAAMAAAAtAP7/AAACAAMAAAArAP//AAACAAMAAAAsAP//AAACAAMAAAAtAP//AAACAAMAAAArAAAAAAAFAAAAAAAsAAAAAAAFAAAAAAAtAAAAAAAFAAAAAAAtAAIAAAAFAAAAAAAtAAEAAAAFAAAAAAAsAAEAAAAFAAAAAAArAAEAAAAFAAAAAAArAAIAAAAFAAAAAAAsAAIAAAAFAAAAAAAmAAIAAAAFAAAAAAAqAAAAAAAFAAAAAAAHAAAAAAACAAIAAAAHAP//AAACAAIAAAAIAP7/AAACAAIAAAAJAP3/AAACAAIAAAAJAP7/AAAFAAAAAAAJAP//AAAFAAAAAAAJAAAAAAAFAAAAAAAIAAAAAAAFAAAAAAAIAP//AAACAAIAAAArAP7/AAACAAMAAAA=")
+tile_set = ExtResource("6_yl73a")
+
+[node name="Player" parent="." instance=ExtResource("7_xbcdb")]
+position = Vector2(-27, -67)
+move_speed = 139.0
